@@ -2,7 +2,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     
     // ==================== TOOLS SECTION ====================
-    const toolsList = ["Python", "MATLAB", "PyTorch", "TensorFlow", "OpenCV", "Power BI", "LaTeX", "Git"];
+    const toolsList = ["Python", "MATLAB", "PyTorch", "TensorFlow", "OpenCV", "Power BI", "LaTeX", "Git", "GitHub", "Scikit-learn"];
     const toolsGrid = document.getElementById('toolsGrid');
     
     if(toolsGrid) {
@@ -14,72 +14,65 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // ==================== STATS SECTION ====================
-    const statsData = [
-        { number: "10+", label: "Projects" },
-        { number: "5+", label: "AI Models" },
-        { number: "3+", label: "Research Projects" },
-        { number: "∞", label: "Photography & Content" }
-    ];
-    const statsContainer = document.getElementById('statsContainer');
-    
-    if(statsContainer) {
-        statsData.forEach(stat => {
-            const card = document.createElement('div');
-            card.className = 'stat-card';
-            card.innerHTML = `
-                <div class="stat-number">${stat.number}</div>
-                <div>${stat.label}</div>
-            `;
-            statsContainer.appendChild(card);
-        });
+    // ==================== ABOUT ME - CENTERED ====================
+    const aboutSection = document.getElementById('about');
+    if(aboutSection) {
+        const aboutWrapper = aboutSection.querySelector('.about-wrapper');
+        if(aboutWrapper) {
+            aboutWrapper.style.textAlign = 'center';
+            aboutWrapper.style.flexDirection = 'column';
+        }
+        const aboutText = aboutSection.querySelector('.about-text');
+        if(aboutText) {
+            aboutText.style.maxWidth = '800px';
+            aboutText.style.margin = '0 auto';
+        }
+        const sectionTitle = aboutSection.querySelector('.section-title');
+        if(sectionTitle) {
+            sectionTitle.style.display = 'block';
+            sectionTitle.style.textAlign = 'center';
+        }
     }
     
     // ==================== PROJECTS SECTION ====================
     const projects = [
-    { 
-        title: "Face Detection & Recognition System", 
-        desc: "Real-time detection using OpenCV & deep learning (Python).", 
-        icon: "fas fa-face-smile",
-        link: "https://github.com/yourusername/face-detection",  // GitHub repo or project link
-        demoLink: "https://your-demo-link.com"  // Optional live demo
-    },
-    { 
-        title: "Sleep Health Regression Analysis", 
-        desc: "Statistical modeling & ML to predict sleep quality metrics.", 
-        icon: "fas fa-chart-line",
-        link: "https://github.com/yourusername/sleep-analysis",
-        demoLink: ""
-    },
-    { 
-        title: "Graph Clustering Algorithms", 
-        desc: "Spectral clustering & community detection on complex networks.", 
-        icon: "fas fa-project-diagram",
-        link: "https://github.com/yourusername/graph-clustering",
-        demoLink: ""
-    },
-    { 
-        title: "Power BI QHSE Dashboard", 
-        desc: "Interactive safety dashboard for industrial KPIs and reporting.", 
-        icon: "fas fa-chart-pie",
-        link: "projects/powerbi-dashboard.pbix",  // Local file path
-        demoLink: ""
-    },
-    { 
-        title: "Mathematical Modeling Projects", 
-        desc: "ODE systems, epidemiology & population dynamics simulations.", 
-        icon: "fas fa-square-root-alt",
-        link: "projects/mathematical-models.zip",  // Downloadable file
-        demoLink: ""
-    },
-    { 
-        title: "Photography Portfolio", 
-        desc: "Creative visual storytelling & travel content collection.", 
-        icon: "fas fa-camera",
-        link: "https://your-photography-portfolio.com",
-        demoLink: ""
-    }
-];
+        { 
+            title: "Face Detection & Recognition System", 
+            desc: "Real-time detection using OpenCV & deep learning (Python).", 
+            icon: "fas fa-face-smile",
+            zipLink: "projects/face-detection.zip"
+        },
+        { 
+            title: "Sleep Health Regression Analysis", 
+            desc: "Statistical modeling & ML to predict sleep quality metrics.", 
+            icon: "fas fa-chart-line",
+            zipLink: "projects/sleep-analysis.zip"
+        },
+        { 
+            title: "Graph Clustering Algorithms", 
+            desc: "Spectral clustering & community detection on complex networks.", 
+            icon: "fas fa-project-diagram",
+            zipLink: "projects/graph-clustering.zip"
+        },
+        { 
+            title: "Power BI QHSE Dashboard", 
+            desc: "Interactive safety dashboard for industrial KPIs and reporting.", 
+            icon: "fas fa-chart-pie",
+            zipLink: "projects/powerbi-dashboard.zip"
+        },
+        { 
+            title: "Mathematical Modeling Projects", 
+            desc: "ODE systems, epidemiology & population dynamics simulations.", 
+            icon: "fas fa-square-root-alt",
+            zipLink: "projects/mathematical-models.zip"
+        },
+        { 
+            title: "Photography Portfolio", 
+            desc: "Creative visual storytelling & travel content collection.", 
+            icon: "fas fa-camera",
+            zipLink: ""
+        }
+    ];
     
     const projectsGrid = document.getElementById('projectsGrid');
     
@@ -87,17 +80,141 @@ document.addEventListener('DOMContentLoaded', function() {
         projects.forEach(proj => {
             const card = document.createElement('div');
             card.className = 'project-card';
+            
+            let buttonsHtml = '';
+            if (proj.zipLink) {
+                buttonsHtml = `
+                    <div class="project-buttons">
+                        <a href="${proj.zipLink}" download class="project-link-btn">
+                            <i class="fas fa-download"></i> Download Project ZIP
+                        </a>
+                    </div>
+                `;
+            }
+            
             card.innerHTML = `
                 <div class="project-icon"><i class="${proj.icon}"></i></div>
                 <h3>${proj.title}</h3>
                 <p>${proj.desc}</p>
+                ${buttonsHtml}
             `;
             projectsGrid.appendChild(card);
         });
     }
     
-    // ==================== TECHNICAL SKILLS SECTION - COMPLETELY REMOVED ====================
-    // No skills section code - title and content removed
+    // ==================== EXCHANGE THOUGHTS SECTION ====================
+    const exchangeContainer = document.getElementById('exchangeThoughtsContainer');
+    if (exchangeContainer) {
+        exchangeContainer.innerHTML = `
+            <h2 class="section-title" style="text-align: center; display: block;">
+                <i class="fas fa-comments"></i> Exchange Thoughts
+            </h2>
+            <div class="exchange-container">
+                <div class="exchange-message">
+                    <p style="font-size: 1.1rem; color: #475569; margin-bottom: 1.5rem; text-align: center;">
+                        💡 Have a question, collaboration idea, or just want to discuss AI and mathematics? 
+                        Let's connect and exchange thoughts!
+                    </p>
+                </div>
+                
+                <div class="exchange-form">
+                    <form id="thoughtsForm">
+                        <div class="form-group">
+                            <input type="text" id="name" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" rows="5" placeholder="Share your thoughts, ideas, or questions..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary submit-thoughts-btn">
+                            <i class="fas fa-paper-plane"></i> Send Message
+                        </button>
+                    </form>
+                    <div id="formMessage" style="margin-top: 1rem; text-align: center;"></div>
+                </div>
+                
+                <div class="quick-links">
+                    <h3>Connect Instantly</h3>
+                    <div class="social-links">
+                        <a href="https://github.com/oussama-zeroual" target="_blank" class="social-link">
+                            <i class="fab fa-github"></i> GitHub
+                        </a>
+                        <a href="https://linkedin.com/in/oussama-zeroual05" target="_blank" class="social-link">
+                            <i class="fab fa-linkedin"></i> LinkedIn
+                        </a>
+                        <a href="mailto:oussama.zeroual@gmail.com" class="social-link">
+                            <i class="fas fa-envelope"></i> Email
+                        </a>
+                    </div>
+                </div>
+            </div>
+        `;
+        
+        // Add form submission handler
+        const thoughtsForm = document.getElementById('thoughtsForm');
+        if (thoughtsForm) {
+            thoughtsForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const name = document.getElementById('name').value;
+                
+                const formMessage = document.getElementById('formMessage');
+                formMessage.innerHTML = '<div class="success-message"><i class="fas fa-check-circle"></i> Thank you for your message, ' + name + '! I\'ll get back to you soon.</div>';
+                
+                thoughtsForm.reset();
+                
+                setTimeout(() => {
+                    formMessage.innerHTML = '';
+                }, 5000);
+                
+                showToast('✨ Message sent successfully!');
+            });
+        }
+    }
+    
+    // ==================== 3D TILT EFFECT ====================
+    document.querySelectorAll('.project-card').forEach(card => {
+        card.addEventListener('mousemove', (e) => {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+            const rotateX = ((y - centerY) / centerY) * 8;
+            const rotateY = ((x - centerX) / centerX) * 8;
+            
+            card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-6px) scale(1.02)`;
+        });
+        
+        card.addEventListener('mouseleave', () => {
+            card.style.transform = '';
+        });
+    });
+    
+    // ==================== SCROLL REVEAL EFFECT ====================
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+    
+    document.querySelectorAll('section, .hero, .tools-grid').forEach(section => {
+        section.style.opacity = '0';
+        section.style.transform = 'translateY(30px)';
+        section.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+        observer.observe(section);
+    });
     
     // ==================== SMOOTH SCROLLING ====================
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -124,10 +241,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // ==================== CV DOWNLOAD - REMOVED ====================
-    // CV download functionality removed - using your PDF link in HTML instead
-    
-    // ==================== TOAST NOTIFICATION FUNCTION ====================
+    // ==================== TOAST NOTIFICATION ====================
     function showToast(message) {
         const toast = document.createElement('div');
         toast.innerText = message;
@@ -150,50 +264,12 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 3000);
     }
     
-    // ==================== ADD ANIMATION STYLES ====================
-    const style = document.createElement('style');
-    style.textContent = `
-        @keyframes slideIn {
-            from {
-                transform: translateX(100%);
-                opacity: 0;
-            }
-            to {
-                transform: translateX(0);
-                opacity: 1;
-            }
-        }
-        
-        @keyframes slideOut {
-            from {
-                transform: translateX(0);
-                opacity: 1;
-            }
-            to {
-                transform: translateX(100%);
-                opacity: 0;
-            }
-        }
-    `;
-    document.head.appendChild(style);
-    
     // ==================== UPDATE FOOTER YEAR ====================
     const footer = document.querySelector('.footer p');
     if(footer) {
         const currentYear = new Date().getFullYear();
-        footer.innerHTML = `© ${currentYear} Oussama Zeroual `;
+        footer.innerHTML = `© ${currentYear} Oussama Zeroual`;
     }
-    
-    // ==================== ADD HOVER EFFECT TO STAT CARDS ====================
-    const statCards = document.querySelectorAll('.stat-card');
-    statCards.forEach(card => {
-        card.addEventListener('mouseenter', () => {
-            card.style.transform = 'translateY(-5px)';
-        });
-        card.addEventListener('mouseleave', () => {
-            card.style.transform = 'translateY(0)';
-        });
-    });
     
     // ==================== CONSOLE LOG ====================
     console.log('Portfolio website loaded successfully! 🚀');
