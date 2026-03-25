@@ -2,7 +2,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     
     // ==================== TOOLS SECTION ====================
-    const toolsList = ["Python", "MATLAB", "PyTorch", "TensorFlow", "OpenCV", "Power BI", "LaTeX", "Blender"];
+    const toolsList = ["Python", "MATLAB", "PyTorch", "TensorFlow", "OpenCV", "Power BI", "LaTeX", "Git"];
     const toolsGrid = document.getElementById('toolsGrid');
     
     if(toolsGrid) {
@@ -60,73 +60,8 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // ==================== SKILLS SECTION ====================
-    const skillsSet = [
-        { name: "Python", percent: 92 },
-        { name: "MATLAB", percent: 88 },
-        { name: "Machine Learning", percent: 85 },
-        { name: "Deep Learning", percent: 82 },
-        { name: "Computer Vision", percent: 80 },
-        { name: "Optimization", percent: 78 },
-        { name: "Data Analysis", percent: 85 },
-        { name: "LaTeX", percent: 90 },
-        { name: "Power BI", percent: 75 },
-        { name: "Blender", percent: 70 }
-    ];
-    
-    const skillsContainer = document.getElementById('skillsContainer');
-    const mid = Math.ceil(skillsSet.length / 2);
-    const leftSkills = skillsSet.slice(0, mid);
-    const rightSkills = skillsSet.slice(mid);
-    
-    function renderSkillGroup(skillsArray) {
-        const groupDiv = document.createElement('div');
-        groupDiv.className = 'skills-group';
-        skillsArray.forEach(skill => {
-            const skillDiv = document.createElement('div');
-            skillDiv.className = 'skill-item';
-            skillDiv.innerHTML = `
-                <div class="skill-name"><span>${skill.name}</span><span>${skill.percent}%</span></div>
-                <div class="progress-bar"><div class="progress-fill" data-width="${skill.percent}"></div></div>
-            `;
-            groupDiv.appendChild(skillDiv);
-        });
-        return groupDiv;
-    }
-    
-    if(skillsContainer) {
-        skillsContainer.appendChild(renderSkillGroup(leftSkills));
-        skillsContainer.appendChild(renderSkillGroup(rightSkills));
-    }
-    
-    // ==================== PROGRESS BAR ANIMATION ====================
-    const fillBars = () => {
-        const progressFills = document.querySelectorAll('.progress-fill');
-        progressFills.forEach(fill => {
-            const width = fill.getAttribute('data-width');
-            if(width && !fill.style.width) {
-                fill.style.width = width + '%';
-            }
-        });
-    };
-    
-    // Intersection Observer for skills animation
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if(entry.isIntersecting) {
-                fillBars();
-                observer.unobserve(entry.target);
-            }
-        });
-    }, { threshold: 0.2 });
-    
-    const skillsSection = document.getElementById('skills');
-    if(skillsSection) {
-        observer.observe(skillsSection);
-    }
-    
-    // Fallback: animate immediately if visible
-    setTimeout(fillBars, 200);
+    // ==================== TECHNICAL SKILLS SECTION - COMPLETELY REMOVED ====================
+    // No skills section code - title and content removed
     
     // ==================== SMOOTH SCROLLING ====================
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -153,81 +88,8 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // ==================== DOWNLOAD CV BUTTON ====================
-    const downloadBtn = document.getElementById('downloadCVBtn');
-    if(downloadBtn) {
-        downloadBtn.addEventListener('click', (e) => {
-            e.preventDefault();
-            
-            // Create CV content
-            const cvContent = `OUSSAMA ZEROUAL - CURRICULUM VITAE
-================================
-
-CONTACT INFORMATION
--------------------
-Email: oussama.zeroual@example.com
-Location: Algiers, Algeria
-GitHub: github.com/oussama-zeroual
-LinkedIn: linkedin.com/in/oussama-zeroual
-
-PROFESSIONAL SUMMARY
---------------------
-Applied Mathematics Engineer specializing in AI & Mathematical Modeling. 
-Expertise in machine learning, computer vision, optimization, and data science. 
-Passionate about solving complex problems through mathematical approaches and creative thinking.
-
-EDUCATION
----------
-Master's in Applied Mathematics | Specialization: Modeling & Simulation
-Bachelor's in Mathematics | Major: Applied Mathematics
-
-TECHNICAL SKILLS
-----------------
-• Programming: Python, MATLAB, SQL
-• AI/ML: PyTorch, TensorFlow, Scikit-learn, OpenCV
-• Data Analysis: Power BI, Pandas, NumPy
-• Tools: LaTeX, Git, Blender
-• Languages: Arabic (Native), English (Fluent), French (Intermediate)
-
-KEY PROJECTS
-------------
-• Face Detection & Recognition System - Real-time computer vision application
-• Sleep Health Regression Analysis - ML model for sleep quality prediction
-• Graph Clustering Algorithms - Spectral clustering on complex networks
-• Power BI QHSE Dashboard - Interactive industrial safety dashboard
-• Mathematical Modeling Projects - ODE systems and population dynamics
-
-CERTIFICATIONS & ACHIEVEMENTS
------------------------------
-• 10+ Completed Projects
-• 5+ Deployed AI Models
-• 3+ Research Publications (in progress)
-
-INTERESTS
----------
-Photography, Travel Content Creation, Mathematical Biology, Open Source Contribution
-
-REFERENCES
-----------
-Available upon request.
-
---- This CV was generated from Oussama Zeroual's Portfolio Website ---`;
-            
-            // Create download
-            const blob = new Blob([cvContent], { type: 'text/plain' });
-            const url = URL.createObjectURL(blob);
-            const link = document.createElement('a');
-            link.href = url;
-            link.download = 'Oussama_Zeroual_CV.txt';
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
-            URL.revokeObjectURL(url);
-            
-            // Show toast notification
-            showToast('📄 CV downloaded successfully!');
-        });
-    }
+    // ==================== CV DOWNLOAD - REMOVED ====================
+    // CV download functionality removed - using your PDF link in HTML instead
     
     // ==================== TOAST NOTIFICATION FUNCTION ====================
     function showToast(message) {

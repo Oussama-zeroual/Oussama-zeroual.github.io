@@ -20,16 +20,22 @@ body {
 
 /* Orange accent */
 :root {
-    --orange: #f97316;
-    --orange-dark: #ea580c;
+    /* Deep Forest Theme Colors */
+    --forest-primary: #10b981;       /* Vibrant Emerald */
+    --forest-dark: #059669;          /* Deep Sea Green */
+    
+    /* Neutral & Structural */
     --gray-light: #f9fafb;
     --gray-border: #eef2f6;
+    
+    /* Shadows & Effects */
     --shadow-sm: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.02);
     --shadow-md: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 10px 10px -5px rgba(0, 0, 0, 0.01);
+    
+    /* Border Radii */
     --radius-xl: 1.5rem;
     --radius-lg: 1rem;
 }
-
 a {
     text-decoration: none;
     color: inherit;
@@ -50,27 +56,33 @@ a {
 }
 
 .btn-primary {
-    background: var(--orange);
+    background: var(--forest-primary);
     color: white;
-    box-shadow: 0 2px 8px rgba(249, 115, 22, 0.2);
+    /* Soft emerald shadow */
+    box-shadow: 0 2px 8px rgba(16, 185, 129, 0.2);
+    transition: all 0.3s ease; /* Added for a smoother hover transition */
 }
 
 .btn-primary:hover {
-    background: var(--orange-dark);
+    background: var(--forest-dark);
     transform: translateY(-2px);
-    box-shadow: 0 10px 20px -5px rgba(249, 115, 22, 0.3);
+    /* Stronger emerald shadow on lift */
+    box-shadow: 0 10px 20px -5px rgba(16, 185, 129, 0.3);
 }
 
 .btn-outline {
     background: transparent;
-    border-color: #e2e8f0;
-    color: #1e293b;
+    border: 2px solid #10b981; /* Forest Primary */
+    color: #10b981;
+    font-weight: 600;
+    transition: all 0.3s ease;
 }
 
 .btn-outline:hover {
-    border-color: var(--orange);
-    color: var(--orange);
-    background: #fff7ed;
+    background: #10b981;
+    color: white;
+    box-shadow: 0 8px 15px rgba(16, 185, 129, 0.2);
+    transform: translateY(-2px);
 }
 
 /* Navigation */
@@ -87,7 +99,7 @@ nav {
     font-weight: 700;
     font-size: 1.5rem;
     letter-spacing: -0.3px;
-    background: linear-gradient(135deg, #1e293b 0%, #f97316 80%);
+    background: linear-gradient(135deg, #064e3b 0%, #10b981 80%);
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
@@ -107,6 +119,16 @@ nav {
     color: var(--orange);
 }
 
+#downloadCVBtn {
+    color: #10b981; /* This matches the Deep Forest emerald */
+    border-color: #10b981;
+}
+#downloadCVBtn:hover {
+    background: #10b981;
+    color: white;
+    box-shadow: 0 8px 15px rgba(16, 185, 129, 0.2);
+    transform: translateY(-2px);
+}
 /* Hero Section */
 .hero {
     display: flex;
@@ -133,11 +155,12 @@ nav {
 }
 
 .hero-content h1 {
-    font-size: 3.3rem;
+    font-size: clamp(24px, 3vw, 52px);
     font-weight: 700;
-    line-height: 1.2;
+    line-height: 1;
     letter-spacing: -0.02em;
     margin-bottom: 1.2rem;
+    white-space: nowrap;
 }
 
 .hero-content p {
