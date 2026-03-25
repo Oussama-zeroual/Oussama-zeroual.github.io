@@ -37,13 +37,49 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // ==================== PROJECTS SECTION ====================
     const projects = [
-        { title: "Face Detection & Recognition System", desc: "Real-time detection using OpenCV & deep learning (Python).", icon: "fas fa-face-smile" },
-        { title: "Sleep Health Regression Analysis", desc: "Statistical modeling & ML to predict sleep quality metrics.", icon: "fas fa-chart-line" },
-        { title: "Graph Clustering Algorithms", desc: "Spectral clustering & community detection on complex networks.", icon: "fas fa-project-diagram" },
-        { title: "Power BI QHSE Dashboard", desc: "Interactive safety dashboard for industrial KPIs and reporting.", icon: "fas fa-chart-pie" },
-        { title: "Mathematical Modeling Projects", desc: "ODE systems, epidemiology & population dynamics simulations.", icon: "fas fa-square-root-alt" },
-        { title: "Photography Portfolio", desc: "Creative visual storytelling & travel content collection.", icon: "fas fa-camera" }
-    ];
+    { 
+        title: "Face Detection & Recognition System", 
+        desc: "Real-time detection using OpenCV & deep learning (Python).", 
+        icon: "fas fa-face-smile",
+        link: "https://github.com/yourusername/face-detection",  // GitHub repo or project link
+        demoLink: "https://your-demo-link.com"  // Optional live demo
+    },
+    { 
+        title: "Sleep Health Regression Analysis", 
+        desc: "Statistical modeling & ML to predict sleep quality metrics.", 
+        icon: "fas fa-chart-line",
+        link: "https://github.com/yourusername/sleep-analysis",
+        demoLink: ""
+    },
+    { 
+        title: "Graph Clustering Algorithms", 
+        desc: "Spectral clustering & community detection on complex networks.", 
+        icon: "fas fa-project-diagram",
+        link: "https://github.com/yourusername/graph-clustering",
+        demoLink: ""
+    },
+    { 
+        title: "Power BI QHSE Dashboard", 
+        desc: "Interactive safety dashboard for industrial KPIs and reporting.", 
+        icon: "fas fa-chart-pie",
+        link: "projects/powerbi-dashboard.pbix",  // Local file path
+        demoLink: ""
+    },
+    { 
+        title: "Mathematical Modeling Projects", 
+        desc: "ODE systems, epidemiology & population dynamics simulations.", 
+        icon: "fas fa-square-root-alt",
+        link: "projects/mathematical-models.zip",  // Downloadable file
+        demoLink: ""
+    },
+    { 
+        title: "Photography Portfolio", 
+        desc: "Creative visual storytelling & travel content collection.", 
+        icon: "fas fa-camera",
+        link: "https://your-photography-portfolio.com",
+        demoLink: ""
+    }
+];
     
     const projectsGrid = document.getElementById('projectsGrid');
     
@@ -145,7 +181,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const footer = document.querySelector('.footer p');
     if(footer) {
         const currentYear = new Date().getFullYear();
-        footer.innerHTML = `© ${currentYear} Oussama Zeroual — Applied Mathematics & AI Portfolio`;
+        footer.innerHTML = `© ${currentYear} Oussama Zeroual `;
     }
     
     // ==================== ADD HOVER EFFECT TO STAT CARDS ====================
