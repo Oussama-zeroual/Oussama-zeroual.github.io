@@ -135,20 +135,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     <div id="formMessage" style="margin-top: 1rem; text-align: center;"></div>
                 </div>
                 
-                <div class="quick-links">
-                    <h3>Connect Instantly</h3>
-                    <div class="social-links">
-                        <a href="https://github.com/oussama-zeroual" target="_blank" class="social-link">
-                            <i class="fab fa-github"></i> GitHub
-                        </a>
-                        <a href="https://linkedin.com/in/oussama-zeroual05" target="_blank" class="social-link">
-                            <i class="fab fa-linkedin"></i> LinkedIn
-                        </a>
-                        <a href="mailto:oussama.zeroual@gmail.com" class="social-link">
-                            <i class="fas fa-envelope"></i> Email
-                        </a>
-                    </div>
-                </div>
+                
             </div>
         `;
         
