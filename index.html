@@ -3,108 +3,345 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>Oussama Zeroual | Applied Mathematics & AI Portfolio</title>
-    <link rel="stylesheet" href="style.css">
+    <meta name="description" content="Portfolio of Oussama Zeroual – Applied Mathematics & AI. Modeling, simulation, computer vision.">
+    <meta name="theme-color" content="#fafafa">
+    <meta property="og:title" content="Oussama Zeroual · Applied Mathematics & AI">
+    <meta property="og:description" content="Clean portfolio: modeling, simulation, computer vision, data.">
+    <meta property="og:type" content="website">
+    <title>Oussama Zeroual · Mathematics & AI</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <nav>
-            <div class="logo">Oussama Zeroual</div>
-            <div class="nav-links">
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <header class="site-header">
+        <div class="container nav-container">
+            <a href="#" class="logo">Oussama Zeroual</a>
+
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open navigation menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <nav class="nav-links" id="navLinks">
                 <a href="#about">About</a>
+                <a href="#skills">Skills</a>
                 <a href="#projects">Projects</a>
-                <a href="#exchangeThoughts">Thoughts</a>
+                <a href="#timeline">Timeline</a>
                 <a href="#contact">Contact</a>
-            </div>
-        </nav>
-    </div>
+            </nav>
+
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark and light mode">
+                <i class="fas fa-moon"></i>
+            </button>
+        </div>
+    </header>
 
     <main>
-        <!-- Hero Section -->
-        <div class="container">
-            <div class="hero">
+        <section class="hero section-reveal">
+            <div class="container hero-grid">
                 <div class="hero-content">
-                    <h1>Applied Mathematics Engineer</h1>
-                    <h1>Modeling & Simulation</h1>
-                    <p>I work on mathematical modeling, simulation, artificial intelligence, computer vision, and data science projects.</p>
+                    <p class="eyebrow">Applied Mathematics · Modeling · AI</p>
+                    <h1>
+                        <span>Oussama Zeroual</span>
+                        <strong>Modeling, simulation & data.</strong>
+                    </h1>
+                    <p class="hero-subtitle">
+                        Mathematical modeling, numerical simulation, computer vision, and AI-driven projects.
+                        Clean, functional, research-oriented.
+                    </p>
+
+                    <p class="typing-line">
+                        Currently focused on <span id="typingText">modeling & simulation</span><span class="typing-cursor">|</span>
+                    </p>
+
+                    <div class="hero-tags">
+                        <span>Computer Vision</span>
+                        <span>Mathematical Modeling</span>
+                        <span>Data Science & AI</span>
+                    </div>
+
                     <div class="button-group">
-                        <a href="#projects" class="btn btn-primary" id="viewWorkBtn">📁 View My Work</a>
-                        <a href="FILES/CV.pdf" download="Zeroual_Oussama_CV.pdf" type="application/pdf" class="btn btn-outline" id="downloadCVBtn">📄 Download CV</a>
+                        <a href="#projects" class="btn btn-primary">
+                            <i class="fas fa-folder-open"></i> View projects
+                        </a>
+                        <a href="FILES/CV.pdf" download class="btn btn-outline" id="downloadCV">
+                            <i class="fas fa-file-arrow-down"></i> Download CV
+                        </a>
                     </div>
+
                     <div class="social-icons">
-                        <a href="https://github.com/oussama-zeroual" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                        <a href="https://linkedin.com/in/oussama-zeroual05" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="mailto:oussamazeroual1000@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                        <a href="https://github.com/oussama-zeroual" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://linkedin.com/in/oussama-zeroual05" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="mailto:oussamazeroual1000@gmail.com" aria-label="Email">
+                            <i class="fas fa-envelope"></i>
+                        </a>
                     </div>
                 </div>
-                <div class="hero-image">
-                    <div class="profile-placeholder">
-                        <img src="images/IMAGE1.png" alt="Oussama Zeroual">
+
+                <div class="hero-visual">
+                    <div class="profile-card">
+                        <div class="profile-ring">
+                            <img src="images/IMAGE1.png" alt="Oussama Zeroual" loading="eager">
+                        </div>
+                        <div class="dynamic-focus-card">
+                            <span>Current focus</span>
+                            <strong id="dynamicFocus">Simulation models</strong>
+                        </div>
+                        <div class="availability-badge">
+                            <span class="status-dot"></span>
+                            Open to remote projects
+                        </div>
                     </div>
-                </div>
-            </div>
-        </div>
 
-        <!-- Tools / Clients Section -->
-        <div class="container">
-            <div class="tools-grid" id="toolsGrid"></div>
-        </div>
-
-        <!-- About Section -->
-        <section id="about">
-            <div class="container">
-                <div class="about-wrapper">
-                    <div class="about-text">
-                        <h2 class="section-title">About Me</h2>
-                        <p>I am an Applied Mathematics student specialized in modeling and simulation. I work on AI, machine learning, computer vision, optimization, and mathematical biology projects.</p>
-                        <p>Beyond algorithms and equations, I also do photography, travel content, and creative projects — blending analytical thinking with visual storytelling.</p>
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <strong>6+</strong>
+                            <span>Projects</span>
+                        </div>
+                        <div class="stat-card">
+                            <strong>4</strong>
+                            <span>Domains</span>
+                        </div>
+                        <div class="stat-card">
+                            <strong>AI</strong>
+                            <span>Math + Data</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Portfolio / Projects Section -->
-        <section id="projects">
+        <section class="tools-section section-reveal">
             <div class="container">
-                <h2 class="section-title">Featured Projects</h2>
+                <div class="section-heading compact-heading">
+                    <p class="section-kicker">Stack</p>
+                    <h2>Tools I use daily</h2>
+                </div>
+                <div class="tools-grid" id="toolsGrid"></div>
+            </div>
+        </section>
+
+        <section id="about" class="section-reveal">
+            <div class="container about-grid">
+                <div class="section-heading left-heading">
+                    <p class="section-kicker">About</p>
+                    <h2>Applied mathematics with an engineering mindset.</h2>
+                </div>
+
+                <div class="about-card">
+                    <p>
+                        Applied Mathematics student specialized in modeling and simulation.
+                        My work combines mathematical reasoning, programming, and visual analysis
+                        to build useful solutions in AI, machine learning, computer vision, and data science.
+                    </p>
+                    <p>
+                        Beyond algorithms and equations, I also enjoy photography and creative projects,
+                        blending analytical thinking with visual storytelling.
+                    </p>
+
+                    <div class="about-highlights">
+                        <div>
+                            <i class="fas fa-brain"></i>
+                            <span>Strong mathematical foundation</span>
+                        </div>
+                        <div>
+                            <i class="fas fa-code"></i>
+                            <span>Python-first implementation</span>
+                        </div>
+                        <div>
+                            <i class="fas fa-chart-line"></i>
+                            <span>Data-driven problem solving</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="section-reveal">
+            <div class="container">
+                <div class="section-heading">
+                    <p class="section-kicker">Expertise</p>
+                    <h2>What I bring to the table</h2>
+                    <p class="section-description">
+                        A balanced profile between mathematical theory, coding, AI models, and practical dashboards.
+                    </p>
+                </div>
+
+                <div class="skills-grid">
+                    <article class="skill-card">
+                        <i class="fas fa-square-root-variable"></i>
+                        <h3>Modeling & Simulation</h3>
+                        <p>ODE/PDE models, numerical methods, optimization, dynamical systems, and scientific computing.</p>
+                    </article>
+                    <article class="skill-card">
+                        <i class="fas fa-brain"></i>
+                        <h3>AI & Machine Learning</h3>
+                        <p>Regression, classification, neural networks, deep learning workflows, and model evaluation.</p>
+                    </article>
+                    <article class="skill-card">
+                        <i class="fas fa-eye"></i>
+                        <h3>Computer Vision</h3>
+                        <p>Face detection, image processing, OpenCV pipelines, and visual recognition systems.</p>
+                    </article>
+                    <article class="skill-card">
+                        <i class="fas fa-chart-simple"></i>
+                        <h3>Data & Dashboards</h3>
+                        <p>Data cleaning, statistical analysis, Power BI dashboards, KPIs, and clear reporting.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="section-reveal">
+            <div class="container">
+                <div class="section-heading">
+                    <p class="section-kicker">Work</p>
+                    <h2>Selected projects</h2>
+                    <p class="section-description">
+                        Filter projects by domain and explore the technologies, results, and downloadable files.
+                    </p>
+                </div>
+
+                <div class="project-filters" id="projectFilters"></div>
                 <div class="projects-grid" id="projectsGrid"></div>
             </div>
         </section>
 
-        <!-- Exchange Thoughts Section -->
-        <section id="exchangeThoughts">
-            <div class="container">
-                <div id="exchangeThoughtsContainer"></div>
+        <section id="timeline" class="section-reveal">
+            <div class="container timeline-layout">
+                <div class="section-heading left-heading">
+                    <p class="section-kicker">Path</p>
+                    <h2>Education & focus areas</h2>
+                    <p class="section-description">
+                        A simple timeline showing my academic and professional journey.
+                    </p>
+                </div>
+
+                <div class="timeline">
+                    <article class="timeline-item">
+                        <span class="timeline-date">Current</span>
+                        <h3>Applied Mathematics Engineering</h3>
+                        <p>Focused on modeling, simulation, AI, optimization, and data science.</p>
+                    </article>
+                    <article class="timeline-item">
+                        <span class="timeline-date">Projects</span>
+                        <h3>AI, Computer Vision & Dashboards</h3>
+                        <p>Built practical projects using Python, OpenCV, machine learning, and Power BI.</p>
+                    </article>
+                    <article class="timeline-item">
+                        <span class="timeline-date">Creative</span>
+                        <h3>Photography & Visual Storytelling</h3>
+                        <p>Creating visual content that connects technical thinking with communication.</p>
+                    </article>
+                </div>
             </div>
         </section>
 
-        <!-- Contact Section -->
-        <section id="contact">
+        <section id="thoughts" class="section-reveal">
             <div class="container">
-                <h2 class="section-title">Let's Connect</h2>
-                <div class="contact-grid">
-                    <div class="contact-info">
-                        <div class="contact-detail"><i class="fas fa-envelope"></i><span>oussamazeroual1000@gmail.com</span></div>
-                        <div class="contact-detail"><i class="fab fa-github"></i><span>github.com/oussama-zeroual</span></div>
-                        <div class="contact-detail"><i class="fab fa-linkedin"></i><span>linkedin.com/in/oussama-zeroual05</span></div>
-                        <div class="contact-detail"><i class="fas fa-map-marker-alt"></i><span>Algiers, Algeria</span></div>
+                <div class="thoughts-card">
+                    <div class="section-heading compact-heading">
+                        <p class="section-kicker">Exchange thoughts</p>
+                        <h2>Ideas I like discussing</h2>
                     </div>
-                    <div class="contact-message">
-                        <p>Feel free to reach out for collaborations, research opportunities, or just to chat about science stuffs.</p>
-                        <p style="margin-top: 1rem;">📍 Based in Algeria • Open to remote projects</p>
+                    <div class="thoughts-grid">
+                        <div>
+                            <i class="fas fa-infinity"></i>
+                            <h3>AI & Mathematics</h3>
+                            <p>How mathematical models become useful intelligent systems.</p>
+                        </div>
+                        <div>
+                            <i class="fas fa-flask"></i>
+                            <h3>Research Projects</h3>
+                            <p>Modeling, simulation, optimization, and applied research ideas.</p>
+                        </div>
+                        <div>
+                            <i class="fas fa-camera-retro"></i>
+                            <h3>Creative Technology</h3>
+                            <p>Combining visual storytelling with data and technical communication.</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
+
+        <section id="contact" class="section-reveal">
+            <div class="container contact-layout">
+                <div class="contact-info-card">
+                    <p class="section-kicker">Contact</p>
+                    <h2>Let's build something useful.</h2>
+                    <p>
+                        Feel free to reach out for collaborations, research opportunities, internships,
+                        freelance projects, or discussions about AI and applied mathematics.
+                    </p>
+
+                    <div class="contact-details">
+                        <a href="mailto:oussamazeroual1000@gmail.com" class="contact-detail">
+                            <i class="fas fa-envelope"></i>
+                            <span>oussamazeroual1000@gmail.com</span>
+                        </a>
+                        <a href="https://github.com/oussama-zeroual" target="_blank" rel="noopener noreferrer" class="contact-detail">
+                            <i class="fab fa-github"></i>
+                            <span>github.com/oussama-zeroual</span>
+                        </a>
+                        <a href="https://linkedin.com/in/oussama-zeroual05" target="_blank" rel="noopener noreferrer" class="contact-detail">
+                            <i class="fab fa-linkedin"></i>
+                            <span>linkedin.com/in/oussama-zeroual05</span>
+                        </a>
+                        <div class="contact-detail">
+                            <i class="fas fa-location-dot"></i>
+                            <span>Algiers, Algeria · Open to remote projects</span>
+                        </div>
+                    </div>
+                </div>
+
+                <form class="contact-form" id="contactForm">
+                    <div class="form-row">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" placeholder="Your name" required>
+                    </div>
+                    <div class="form-row">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="your.email@example.com" required>
+                    </div>
+                    <div class="form-row">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="6" placeholder="Tell me about your idea, question, or project..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary full-width">
+                        <i class="fas fa-paper-plane"></i> Send Message
+                    </button>
+                    <p class="form-note">
+                        This frontend version opens your email app with the message prepared.
+                    </p>
+                    <div id="formMessage" class="form-message"></div>
+                </form>
+            </div>
+        </section>
     </main>
 
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
     <footer class="footer">
-        <p>© 2025 Oussama Zeroual</p>
+        <div class="container footer-content">
+            <p>© <span id="currentYear">2026</span> Oussama Zeroual. All rights reserved.</p>
+            <a href="#">Back to top</a>
+        </div>
     </footer>
 
     <script src="script.js"></script>
 </body>
 </html>
-
