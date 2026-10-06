@@ -12,6 +12,17 @@
         name="description"
         content="Oussama Zeroual — Engineering Student in Applied Mathematics, Mathematical Modeling and Simulation."
     >
+    <meta name="theme-color" content="#ffffff">
+    <meta property="og:title" content="Oussama Zeroual">
+    <meta
+        property="og:description"
+        content="Engineering Student in Applied Mathematics — Mathematical Modeling and Simulation."
+    >
+    <meta property="og:type" content="website">
+    <link
+        rel="icon"
+        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3EOZ%3C/text%3E%3C/svg%3E"
+    >
     <link
         rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
@@ -33,7 +44,7 @@
             Oussama Zeroual
         </a>
         <nav>
-            <a href="FILES/CV.pdf" target="_blank">
+            <a href="FILES/CV.pdf" target="_blank" rel="noopener">
                 CV
             </a>
         </nav>
@@ -48,7 +59,7 @@
             <div class="profile-image">
                 <img
                     src="images/IMAGE1.png"
-                    alt="Oussama Zeroual"
+                    alt="Portrait of Oussama Zeroual"
                 >
             </div>
             <h1>
@@ -59,50 +70,54 @@
             </p>
             <div class="sidebar-info">
                 <div class="info-item">
-                    <i class="fa-solid fa-location-dot"></i>
+                    <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
                     <span>
                         Algiers, Algeria
                     </span>
                 </div>
                 <div class="info-item">
-                    <i class="fa-solid fa-building-columns"></i>
+                    <i class="fa-solid fa-building-columns" aria-hidden="true"></i>
                     <a
                         href="https://www.nhsm.dz/"
                         target="_blank"
+                        rel="noopener"
                     >
                         National Higher School of Mathematics
                     </a>
                 </div>
                 <div class="info-item">
-                    <i class="fa-solid fa-envelope"></i>
+                    <i class="fa-solid fa-envelope" aria-hidden="true"></i>
                     <a href="mailto:oussama.zeroual@nhsm.edu.dz">
                         Email
                     </a>
                 </div>
                 <div class="info-item">
-                    <i class="fa-solid fa-graduation-cap"></i>
+                    <i class="fa-solid fa-graduation-cap" aria-hidden="true"></i>
                     <a
                         href="https://www.researchgate.net/profile/Zeroual-Oussama?ev=hdr_xprf"
                         target="_blank"
+                        rel="noopener"
                     >
-                        Google Scholar
+                        ResearchGate
                     </a>
                 </div>
                 <div class="info-item">
-                    <i class="fa-brands fa-github"></i>
+                    <i class="fa-brands fa-github" aria-hidden="true"></i>
                     <a
                         href="https://github.com/Oussama-zeroual"
                         target="_blank"
+                        rel="noopener"
                     >
-                        Github
+                        GitHub
                     </a>
 
                 </div>
                 <div class="info-item">
-                    <i class="fa-brands fa-linkedin"></i>
+                    <i class="fa-brands fa-linkedin" aria-hidden="true"></i>
                     <a
                         href="https://www.linkedin.com/in/oussama-zeroual05"
                         target="_blank"
+                        rel="noopener"
                     >
                         LinkedIn
                     </a>
@@ -115,16 +130,17 @@
                 Homepage
             </h2>
             <p>
-                I am a final-year Engineering student in Applied Mathematics at the National Higher School of Mathematics
+                I am a final-year engineering student in Applied Mathematics at the National Higher School of Mathematics
                 in Algeria, specializing in Mathematical Modeling and Simulation.
                 My academic background focuses on mathematical
                 modeling, numerical simulation, control systems,
                 dynamical systems and scientific computing.
-                <br>
-                My research interests range from 
+            </p>
+            <p>
+                My research interests include
                 <strong>
-                    PDE based modeling, control systems, mathematical biology and fluid mechanics
-                </strong>,
+                    Mathematical modeling, Simulation, Industrial mathematics, control systems 
+                </strong>.
             </p>
             <hr>
 
@@ -141,7 +157,7 @@
             </p>
             <ul>
                 <li>
-                    <strong>Research center in intdustrial technologies </strong> —
+                    <strong>Research Center in Industrial Technologies (CRTI)</strong> —
                     Research internship on UAV control methods
                     and simulation using PX4 environments.
 
@@ -150,7 +166,7 @@
 
                 <li>
 
-                    <strong>Algerian space agency</strong> —
+                    <strong>Algerian Space Agency (ASAL)</strong> —
                     Research internship involving Sentinel-1
                     and Sentinel-2 satellite imagery and
                     deep-learning-based image processing.
@@ -160,7 +176,7 @@
 
                 <li>
 
-                    <strong>Algiers water and sanitation company</strong> —
+                    <strong>Algiers Water and Sanitation Company (SEAAL)</strong> —
                     Control and simulation internship involving
                     industrial monitoring and SCADA systems.
 
@@ -174,7 +190,11 @@
             <h2 class="subheading">
                 Current Work
             </h2>
-
+            <p>
+                I am currently working on my final-year engineering and master's project in applied mathematics,
+                with a focus on mathematical modeling of meachanical-thermal geothermal drilling system for hydrogen extraction.
+                More details will be shared here soon.
+            </p>
             <hr>
 
             <h2 class="subheading">
@@ -194,6 +214,10 @@
                 <a href="mailto:oussamazeroual1000@gmail.com">
                     oussamazeroual1000@gmail.com
                 </a>
+                <br>
+                <a href="mailto:oussama.zeroual@nhsm.edu.dz">
+                    oussama.zeroual@nhsm.edu.dz
+                </a>
             </p>
 
 
@@ -206,7 +230,7 @@
 
 <footer>
     <div class="footer-container">
-        © 2026 Oussama Zeroual
+        © <span id="year">2026</span> Oussama Zeroual
     </div>
 </footer>
 <script src="script.js"></script>
